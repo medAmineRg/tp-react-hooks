@@ -1,12 +1,19 @@
-import React, { useContext } from "react";
-import { SearchTermContext, ThemeContext } from "../App";
+import React, { useState, useContext } from "react";
+import { ThemeContext, SearchTermContext } from "../App";
+import useDebounce from "../hooks/useDebounce";
 
 const ProductSearch = () => {
-  const { searchTerm, setSearchTerm } = useContext(SearchTermContext);
+  const [searchTerm, setSearchTerm] = useState("");
   const { isDarkTheme } = useContext(ThemeContext);
-  // TODO: Exercice 2.1 - Utiliser le LanguageContext
+  const { setSearchTerm: setGlobalSearchTerm } = useContext(SearchTermContext);
 
-  // TODO: Exercice 1.2 - Utiliser le hook useDebounce
+  // Use the debounce hook
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+
+  // Update global search term when debounced value changes
+  React.useEffect(() => {
+    setGlobalSearchTerm(debouncedSearchTerm);
+  }, [debouncedSearchTerm, setGlobalSearchTerm]);
 
   return (
     <div className="mb-4">
