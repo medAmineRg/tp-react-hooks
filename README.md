@@ -59,12 +59,17 @@ Pour chaque exercice :
 
 _Votre réponse pour l'exercice 1 :_
 
-
 ```
 Expliquez votre solution ici
-
-[Ajoutez vos captures d'écran]
+1.1 : J'ai modifié le composant ProductSearch pour utiliser la recherche en temps réel. J'ai utilisé l'état local pour stocker la valeur de la recherche et j'ai utilisé l'effet pour mettre à jour les produits filtrés à chaque changement de la valeur de recherche.
+1.2 : J'ai implémenté le debounce sur la recherche en utilisant un hook personnalisé useDebounce qui prend en paramètre la valeur de recherche et le délai de debounce. J'ai utilisé ce hook pour déclencher la recherche après un délai de 500ms.
 ```
+
+Cette solution m'a permis de gérer la recherche en temps réel et d'éviter de déclencher une recherche à chaque changement de la valeur de recherche.
+![alt text](1-1seach.png)
+Cette capture d'écran montre le fonctionnement de la recherche en temps réel avec le debounce.
+Une seule recherche est déclenchée après un délai de 500ms après le dernier changement de la valeur de recherche.
+![alt text](1-2deboune.png)
 
 ### Exercice 2 : Context et Internationalisation
 
@@ -113,7 +118,7 @@ Expliquez votre solution ici
 
 ## Rendu
 
-- Ajoutez l'URL de votre dépôt Github dans  **Classroom** et envoyer la réponse dès le démarage de votre projet.
+- Ajoutez l'URL de votre dépôt Github dans **Classroom** et envoyer la réponse dès le démarage de votre projet.
 - Les push doivent se faire au fûr et à mesure que vous avancez dans votre projet.
 - Le README.md doit être à jour avec vos réponses et captures d'écran.
 - Chaques exercice doit faire l'objet d'au moins un commit avec un message mentionnant le numéro de l'exercice.

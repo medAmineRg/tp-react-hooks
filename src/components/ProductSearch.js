@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ThemeContext, SearchTermContext } from "../App";
 import useDebounce from "../hooks/useDebounce";
 
@@ -11,7 +11,7 @@ const ProductSearch = () => {
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   // Update global search term when debounced value changes
-  React.useEffect(() => {
+  useEffect(() => {
     setGlobalSearchTerm(debouncedSearchTerm);
   }, [debouncedSearchTerm, setGlobalSearchTerm]);
 
