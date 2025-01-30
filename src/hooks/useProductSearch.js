@@ -1,8 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { SearchTermContext } from "../App";
 
-// TODO: Exercice 3.1 - Créer le hook useDebounce
-// TODO: Exercice 3.2 - Créer le hook useLocalStorage
 
 const useProductSearch = () => {
   const [products, setProducts] = useState([]);

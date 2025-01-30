@@ -85,9 +85,12 @@ _Votre réponse pour l'exercice 2 :_
 Expliquez votre solution ici
 2.1 : J'ai créé le contexte LanguageContext pour stocker la langue actuelle et la fonction pour changer la langue.
 2.2 : J'ai ajouté le sélecteur de langue dans le composant App pour permettre à l'utilisateur de changer la langue de l'application.
+
 ```
 
-### Exercice 3 : Hooks Personnalisés
+2.3![alt text](2-2language.png)
+
+###Exercice 3 : Hooks Personnalisés
 
 #### Objectif : Créer des hooks réutilisables
 
@@ -99,6 +102,9 @@ _Votre réponse pour l'exercice 3 :_
 
 ```
 Expliquez votre solution ici
+3.1 : J'ai créé le hook useDebounce pour gérer le debounce sur la recherche. Ce hook prend en paramètre la valeur à débouncer et le délai de debounce. Il utilise l'état local pour stocker la valeur débouncée et l'effet pour mettre à jour la valeur débouncée après le délai de debounce.
+3.2 : J'ai créé le hook useLocalStorage pour gérer la persistance des préférences de langue. Ce hook prend en paramètre la clé de stockage et la valeur par défaut. Il utilise l'état local pour stocker la valeur et l'effet pour mettre à jour la valeur dans le stockage local.
+```
 [Ajoutez vos captures d'écran]
 ```
 
