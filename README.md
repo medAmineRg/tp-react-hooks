@@ -83,7 +83,8 @@ _Votre réponse pour l'exercice 2 :_
 
 ```
 Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+2.1 : J'ai créé le contexte LanguageContext pour stocker la langue actuelle et la fonction pour changer la langue.
+2.2 : J'ai ajouté le sélecteur de langue dans le composant App pour permettre à l'utilisateur de changer la langue de l'application.
 ```
 
 ### Exercice 3 : Hooks Personnalisés
