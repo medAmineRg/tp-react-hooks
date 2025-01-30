@@ -105,7 +105,9 @@ Expliquez votre solution ici
 3.1 : J'ai créé le hook useDebounce pour gérer le debounce sur la recherche. Ce hook prend en paramètre la valeur à débouncer et le délai de debounce. Il utilise l'état local pour stocker la valeur débouncée et l'effet pour mettre à jour la valeur débouncée après le délai de debounce.
 3.2 : J'ai créé le hook useLocalStorage pour gérer la persistance des préférences de langue. Ce hook prend en paramètre la clé de stockage et la valeur par défaut. Il utilise l'état local pour stocker la valeur et l'effet pour mettre à jour la valeur dans le stockage local.
 ```
+
 [Ajoutez vos captures d'écran]
+
 ```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
@@ -119,9 +121,17 @@ Expliquez votre solution ici
 _Votre réponse pour l'exercice 4 :_
 
 ```
+
 Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+4.1 : J'ai ajouté le bouton de rechargement dans le composant ProductList pour permettre à l'utilisateur de recharger les produits.
+4.2 : J'ai implémenté la pagination dans le composant ProductList pour afficher les produits par page. J'ai utilisé l'état local pour stocker le numéro de la page actuelle et j'ai utilisé l'effet pour mettre à jour les produits affichés à chaque changement de la page.
+
 ```
+
+```
+
+![alt text](4-1recharge.png)
+![alt text](4-2controleur-pagination.png)
 
 ## Rendu
 

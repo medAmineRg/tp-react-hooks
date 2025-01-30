@@ -1,21 +1,19 @@
 import { useState, useEffect, useContext } from "react";
 import { SearchTermContext } from "../App";
 
-
 const useProductSearch = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   // 1.1 - ajouter le terme de recherche
   const { searchTerm } = useContext(SearchTermContext);
-  // TODO: Exercice 4.2 - Ajouter l'état pour la pagination
+  const [page, setPage] = useState(0);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // TODO: Exercice 4.2 - Modifier l'URL pour inclure les paramètres de pagination
         const response = await fetch(
-          `https://api.daaif.net/products/search?q=${searchTerm}&delay=1000`
+          `https://api.daaif.net/products/search?q=${searchTerm}&delay=1000&limit=10&skip=${page}`
         );
         if (!response.ok) throw new Error("Erreur réseau");
         const data = await response.json();
@@ -28,17 +26,39 @@ const useProductSearch = () => {
     };
 
     fetchProducts();
-  }, [searchTerm]); // TODO: Exercice 4.2 - Ajouter les dépendances pour la pagination
+  }, [searchTerm, page]);
 
-  // TODO: Exercice 4.1 - Ajouter la fonction de rechargement
-  // TODO: Exercice 4.2 - Ajouter les fonctions pour la pagination
+  const reload = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(
+        `https://api.daaif.net/products/search?q=${searchTerm}&delay=1000&limit=10&skip=${page}`
+      );
+      if (!response.ok) throw new Error("Erreur réseau");
+      const data = await response.json();
+      setProducts(data.products);
+      setLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setLoading(false);
+    }
+  };
+
+  const paginate = () => {
+    return {
+      page,
+      nextPage: page + 1,
+      prevPage: page - 1,
+      setPage,
+    };
+  };
 
   return {
     products,
     loading,
     error,
-    // TODO: Exercice 4.1 - Retourner la fonction de rechargement
-    // TODO: Exercice 4.2 - Retourner les fonctions et états de pagination
+    reload,
+    paginate: paginate(),
   };
 };
 
